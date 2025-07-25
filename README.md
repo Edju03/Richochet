@@ -2,11 +2,14 @@
 
 A Python implementation of the classic Ricochet Robots puzzle game with procedural puzzle generation, guaranteed solvability verification, and a modern GUI interface featuring smooth animations and trajectory visualization.
 
+
 ## Overview
 
 Ricochet Robots is a strategic puzzle game where players control a robot that moves like a chess rook - sliding in straight lines until hitting walls or boundaries. The objective is to collect two crystals before reaching the goal, requiring careful planning and understanding of ricochet mechanics.
 
 ## Game Rules
+
+![Ricochet Robots Game](figures/RichochetUI.png)
 
 ### Core Mechanics
 - **Robot Movement**: The robot slides in straight lines (north, south, east, west) until hitting a wall or boundary
