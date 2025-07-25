@@ -68,6 +68,8 @@ class RicochetGame:
             "Spiral Gateway"
         ]
         self.current_puzzle_index = 0
+        self.path_positions: List[Position] = []
+        self.optimal_moves: Optional[int] = None
         
     def add_border_walls(self):
         for i in range(self.grid_size):
