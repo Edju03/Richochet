@@ -11,6 +11,14 @@ Ricochet Robots is a strategic puzzle game where players control a robot that mo
 
 ![Ricochet Robots Game](figures/RichochetUI.png)
 
+## Key Features
+
+- **Puzzle Generator**: Creates new puzzles with guaranteed solvability and adjustable difficulty levels
+- **Built-in Solver**: Watch the optimal solution unfold with step-by-step animation showing the shortest path
+- **Three Difficulty Levels**: Easy (6-10 moves), Medium (10-14 moves), Hard (14-20 moves)
+- **Smooth Animations**: Real-time trajectory visualization showing robot movement paths
+- **Reset & Retry**: Return to starting position or generate completely new puzzles instantly
+
 ### Core Mechanics
 - **Robot Movement**: The robot slides in straight lines (north, south, east, west) until hitting a wall or boundary
 - **No Mid-Slide Stopping**: Once movement begins, the robot cannot stop until it encounters an obstacle
