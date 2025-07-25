@@ -1,6 +1,6 @@
 # Ricochet Robots - 5×5 Strategic Sliding Puzzle
 
-**[Play Online](https://edju03.github.io/ricochet-robots/)** - No download required!
+**[Play Online](https://edju03.github.io/ricochet-robots/)**
 
 A Python implementation of the classic Ricochet Robots puzzle game with procedural puzzle generation, guaranteed solvability verification, and a modern GUI interface featuring smooth animations and trajectory visualization.
 
