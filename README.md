@@ -1,13 +1,17 @@
 # Ricochet Robots - 5×5 Strategic Sliding Puzzle
 
+**[Play Online](https://edju03.github.io/ricochet-robots/)** - No download required!
+
 A Python implementation of the classic Ricochet Robots puzzle game with procedural puzzle generation, guaranteed solvability verification, and a modern GUI interface featuring smooth animations and trajectory visualization.
 
+## Quick Start
+
+- **Web Version**: Visit [https://edju03.github.io/ricochet-robots/](https://edju03.github.io/ricochet-robots/)
+- **Local Python**: Run `python ricochet_gui_modular.py`
 
 ## Overview
 
 Ricochet Robots is a strategic puzzle game where players control a robot that moves like a chess rook - sliding in straight lines until hitting walls or boundaries. The objective is to collect two crystals before reaching the goal, requiring careful planning and understanding of ricochet mechanics.
-
-**Quick Start**: Run `python ricochet_gui_modular.py` to launch the game
 
 ## Game Rules
 
@@ -292,12 +296,3 @@ python test_modules.py
 - **RESET POSITION**: Return robot to starting position
 - **SHOW SOLUTION**: Demonstrate optimal solution path
 - **DIFFICULTY**: Select Easy/Medium/Hard puzzle complexity
-
-## Technical Highlights
-
-### Bug Fixes & Improvements
-- **Fixed BFS Algorithm**: Corrected goal collection logic to prevent invalid solution paths
-- **Off-by-One Correction**: Accurate move counting in solution verification
-- **Pass-Through Mechanics**: Proper crystal collection during robot sliding
-- **Platform Compatibility**: Reliable button styling across different operating systems
-- **Visual Polish**: Clean trajectory visualization replacing complex shadow effects
