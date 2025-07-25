@@ -11,6 +11,7 @@ A Python implementation of the classic Ricochet Robots puzzle game with procedur
 ![Web Version - Ricochet Neon Grid](figures/Ricochet%20Neon%20Grid%20Web.png)
 
 - **Local Python**: Run `python ricochet_gui_modular.py`
+
 ![Ricochet Robots Game](figures/RichochetUI.png)
 
 ## Overview
