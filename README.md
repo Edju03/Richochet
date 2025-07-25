@@ -11,15 +11,11 @@ A Python implementation of the classic Ricochet Robots puzzle game with procedur
 ![Web Version - Ricochet Neon Grid](figures/Ricochet%20Neon%20Grid%20Web.png)
 
 - **Local Python**: Run `python ricochet_gui_modular.py`
-
+![Ricochet Robots Game](figures/RichochetUI.png)
 
 ## Overview
 
 Ricochet Robots is a strategic puzzle game where players control a robot that moves like a chess rook - sliding in straight lines until hitting walls or boundaries. The objective is to collect two crystals before reaching the goal, requiring careful planning and understanding of ricochet mechanics.
-
-## Game Rules
-
-![Ricochet Robots Game](figures/RichochetUI.png)
 
 ## Key Features
 
@@ -28,6 +24,8 @@ Ricochet Robots is a strategic puzzle game where players control a robot that mo
 - **Three Difficulty Levels**: Easy (6-10 moves), Medium (10-14 moves), Hard (14-20 moves)
 - **Smooth Animations**: Real-time trajectory visualization showing robot movement paths
 - **Reset & Retry**: Return to starting position or generate completely new puzzles instantly
+
+## Game Rules
 
 ### Core Mechanics
 - **Robot Movement**: The robot slides in straight lines (north, south, east, west) until hitting a wall or boundary
