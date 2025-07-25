@@ -7,7 +7,11 @@ A Python implementation of the classic Ricochet Robots puzzle game with procedur
 ## Quick Start
 
 - **Web Version**: Visit [https://edju03.github.io/ricochet-robots/](https://edju03.github.io/ricochet-robots/)
+
+![Web Version - Ricochet Neon Grid](figures/Ricochet%20Neon%20Grid.png)
+
 - **Local Python**: Run `python ricochet_gui_modular.py`
+
 
 ## Overview
 
