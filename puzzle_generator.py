@@ -136,19 +136,20 @@ class PuzzleGenerator:
     
     @staticmethod
     def generate_guaranteed_solvable_puzzle(game, difficulty='Medium', max_attempts=10) -> bool:
-        for attempt in range(max_attempts):
+        # Keep trying procedural generation until we succeed - no fallbacks!
+        attempt = 0
+        while True:
+            attempt += 1
             if PuzzleGenerator.generate_strategic_puzzle(game, difficulty):
+                if attempt > max_attempts:
+                    print(f"Note: Found solution after {attempt} attempts (target was {max_attempts})")
                 return True
+            
+            # Optional: Print progress for very long searches (but keep trying!)
+            if attempt % 50 == 0:
+                print(f"Still searching... attempt {attempt} for {difficulty} difficulty")
         
-        # Fallback to original hand-designed layouts
-        success = PuzzleGenerator.generate_original_strategic_puzzle(game)
-        
-        # Final safety check - if somehow we still don't have a solution, force layout 1
-        if success and game.optimal_moves is None:
-            print("Warning: Fallback layout had no solution, forcing known solvable layout")
-            return PuzzleGenerator.generate_original_strategic_puzzle(game, 1, 0)
-        
-        return success
+        # This line should never be reached since we loop forever until success
     
     @staticmethod
     def generate_original_strategic_puzzle(game, puzzle_index=None, _retry_count=0) -> bool:

@@ -180,49 +180,6 @@ def generate_strategic_puzzle(game, difficulty='Medium'):
     
     return fallback_to_known_layout()
 ```
-
-## GUI Features & Visual Design
-
-### Modern Interface Design
-- **Dark Theme**: Professional color palette with modern styling
-  - Deep space blue background (`#0f0f23`)
-  - Rich dark purple surfaces (`#1e1e3e`)
-  - Bright cyan robot (`#06b6d4`)
-  - Light gray game board (`#f8fafc`)
-- **Two-Panel Layout**: Game board (left) and control dashboard (right)
-- **Smooth Animations**: Physics-based robot sliding with trajectory visualization
-- **Visual Effects**: Crystal collection ripple effects and win celebrations
-
-### Enhanced Button Styling
-- **Reliable Visibility**: Frame-wrapped buttons with neutral backgrounds to overcome OS theme limitations
-- **Color-Coded Actions**: 
-  - NEW PUZZLE: Light lavender background (`#ddd6fe`) with indigo text
-  - RESET POSITION: Light peach background (`#fed7aa`) with orange text  
-  - SHOW SOLUTION: Light purple background (`#e9d5ff`) with purple text
-  - DIFFICULTY: Light mint background (`#d1fae5`) with green text
-- **Hover Effects**: Subtle color transitions on interaction
-
-### User Experience Features
-- **Real-Time Feedback**: Live move counter and crystal collection progress
-- **Difficulty Selection**: Easy/Medium/Hard puzzle generation with visual feedback
-- **Optimal Move Display**: Shows minimum solution length for each puzzle
-- **Keyboard Controls**: Full arrow keys and WASD support
-- **Solution Demonstration**: Animated optimal path playback with "SHOW SOLUTION" button
-- **Scrollable Interface**: Right panel scrolls to accommodate all content on smaller screens
-
-### Animation & Visual Effects
-- **Trajectory Path**: Clean blue line (`#38bdf8`) showing robot movement path in real-time
-- **Smooth Robot Movement**: 60fps sliding animation with proper collision detection
-- **Crystal Collection Effects**: Expanding ripple animations when crystals are collected
-- **Win Screen**: Overlay with move count statistics and continue option
-- **Board Scaling**: Large 120px cells for excellent visibility and modern feel
-
-### Status Tracking
-- **Move Counter**: Current moves vs optimal solution comparison
-- **Crystal Progress**: Visual indicators showing collection status with color changes
-- **Game Elements Legend**: Clear symbol reference for all game pieces
-- **Responsive Layout**: Adapts to different window sizes with minimum constraints
-
 ## Verification Methods
 
 ### 1. Solvability Checking
