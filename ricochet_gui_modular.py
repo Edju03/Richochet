@@ -34,6 +34,12 @@ class RicochetGUI:
         
         self.root.configure(bg=self.colors['bg'])
         
+        # Make window pop up and focus
+        self.root.lift()
+        self.root.attributes('-topmost', True)
+        self.root.after_idle(lambda: self.root.attributes('-topmost', False))
+        self.root.focus_force()
+        
         # Game instance
         self.game = RicochetGame()
         
