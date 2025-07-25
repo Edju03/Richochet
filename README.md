@@ -8,7 +8,7 @@ A Python implementation of the classic Ricochet Robots puzzle game with procedur
 
 - **Web Version**: Visit [https://edju03.github.io/ricochet-robots/](https://edju03.github.io/ricochet-robots/)
 
-![Web Version - Ricochet Neon Grid](figures/Ricochet%20Neon%20Grid.png)
+![Web Version - Ricochet Neon Grid](figures/Ricochet%20Neon%20Grid%20Web.png)
 
 - **Local Python**: Run `python ricochet_gui_modular.py`
 
@@ -281,7 +281,7 @@ def test_game_mechanics():
 
 ### Requirements
 - Python 3.7+
-- tkinter (usually included with Python)
+- tkinter
 - No additional dependencies required
 
 ### Running the Game
