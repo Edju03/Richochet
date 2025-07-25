@@ -6,8 +6,8 @@ class CellType(Enum):
     EMPTY = '.'
     START = 'S'
     GOAL = 'G'
-    FRIEND1 = '1'
-    FRIEND2 = '2'
+    AMBER_CRYSTAL = '1'
+    VIOLET_CRYSTAL = '2'
     ROBOT = 'R'
 
 class Direction(Enum):
@@ -55,8 +55,8 @@ class RicochetGame:
         self.walls = set()
         self.start_pos = None
         self.goal_pos = None
-        self.friend1_pos = None
-        self.friend2_pos = None
+        self.amber_crystal_pos = None
+        self.violet_crystal_pos = None
         self.robot_pos = None
         self.visited_friends = set()
         self.move_count = 0
@@ -129,11 +129,11 @@ class RicochetGame:
         # Check if robot passed through any friends during the slide
         friend_visited = False
         for pos in path[1:]:  # Skip starting position
-            if pos == self.friend1_pos and self.friend1_pos not in self.visited_friends:
-                self.visited_friends.add(self.friend1_pos)
+            if pos == self.amber_crystal_pos and self.amber_crystal_pos not in self.visited_friends:
+                self.visited_friends.add(self.amber_crystal_pos)
                 friend_visited = True
-            elif pos == self.friend2_pos and self.friend2_pos not in self.visited_friends:
-                self.visited_friends.add(self.friend2_pos)
+            elif pos == self.violet_crystal_pos and self.violet_crystal_pos not in self.visited_friends:
+                self.visited_friends.add(self.violet_crystal_pos)
                 friend_visited = True
         
         # Check win condition - goal can be reached by passing through OR stopping on it
@@ -156,9 +156,9 @@ class RicochetGame:
             self.grid[self.start_pos.row][self.start_pos.col] = CellType.START
         if self.goal_pos:
             self.grid[self.goal_pos.row][self.goal_pos.col] = CellType.GOAL
-        if self.friend1_pos:
-            self.grid[self.friend1_pos.row][self.friend1_pos.col] = CellType.FRIEND1
-        if self.friend2_pos:
-            self.grid[self.friend2_pos.row][self.friend2_pos.col] = CellType.FRIEND2
+        if self.amber_crystal_pos:
+            self.grid[self.amber_crystal_pos.row][self.amber_crystal_pos.col] = CellType.AMBER_CRYSTAL
+        if self.violet_crystal_pos:
+            self.grid[self.violet_crystal_pos.row][self.violet_crystal_pos.col] = CellType.VIOLET_CRYSTAL
         if self.robot_pos:
             self.grid[self.robot_pos.row][self.robot_pos.col] = CellType.ROBOT

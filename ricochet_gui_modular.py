@@ -734,8 +734,8 @@ class RicochetGUI:
         
         start = self.game.start_pos
         goal = self.game.goal_pos
-        friend1 = self.game.friend1_pos
-        friend2 = self.game.friend2_pos
+        amber_crystal = self.game.amber_crystal_pos
+        violet_crystal = self.game.violet_crystal_pos
         
         # State: (position, collected_items_set, path)
         queue = deque([(start, frozenset(), [])])
@@ -763,10 +763,10 @@ class RicochetGUI:
                 
                 # Check what we collect during this slide
                 for cell in slide_path[1:]:
-                    if cell == friend1:
-                        new_collected.add(friend1)
-                    elif cell == friend2:
-                        new_collected.add(friend2)
+                    if cell == amber_crystal:
+                        new_collected.add(amber_crystal)
+                    elif cell == violet_crystal:
+                        new_collected.add(violet_crystal)
                     elif cell == goal and len(new_collected) == 2:
                         new_collected.add(goal)
                 
@@ -870,12 +870,12 @@ class RicochetGUI:
         
         # Update crystal indicators
         
-        if self.game.friend1_pos in self.game.visited_friends:
+        if self.game.amber_crystal_pos in self.game.visited_friends:
             self.crystal1_indicator.config(fg=self.colors['warning'])
         else:
             self.crystal1_indicator.config(fg=self.colors['border'])
         
-        if self.game.friend2_pos in self.game.visited_friends:
+        if self.game.violet_crystal_pos in self.game.visited_friends:
             self.crystal2_indicator.config(fg=self.colors['accent'])
         else:
             self.crystal2_indicator.config(fg=self.colors['border'])
@@ -995,7 +995,7 @@ class RicochetGUI:
                         fill='white', outline=''
                     )
                 
-                elif cell_type == CellType.FRIEND1:
+                elif cell_type == CellType.AMBER_CRYSTAL:
                     # Enhanced amber crystal
                     # Glow effect
                     glow_points = [
@@ -1031,7 +1031,7 @@ class RicochetGUI:
                         center_x - 8, center_y + 2
                     ], fill='#fef3c7', outline='')
                 
-                elif cell_type == CellType.FRIEND2:
+                elif cell_type == CellType.VIOLET_CRYSTAL:
                     # Enhanced violet crystal
                     # Glow effect
                     glow_points = [

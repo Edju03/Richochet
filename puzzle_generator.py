@@ -45,14 +45,14 @@ class PuzzleGenerator:
         all_cells = [(i, j) for i in range(game.grid_size) for j in range(game.grid_size)]
         random.shuffle(all_cells)
         pos = [Position(*all_cells.pop()) for _ in range(4)]
-        return pos[0], pos[1], pos[2], pos[3] # start, goal, friend1, friend2
+        return pos[0], pos[1], pos[2], pos[3] # start, goal, amber_crystal, violet_crystal
 
     @staticmethod
     def _compute_solution_length(game, max_moves=30):
         start = game.start_pos
         goal = game.goal_pos
-        friend1 = game.friend1_pos
-        friend2 = game.friend2_pos
+        amber_crystal = game.amber_crystal_pos
+        violet_crystal = game.violet_crystal_pos
         
         # State: (position, collected_items_set, moves)
         # collected_items can contain friend1, friend2, and goal
@@ -84,13 +84,13 @@ class PuzzleGenerator:
                 
                 # Check what we collect during this slide
                 for cell in path[1:]:  # Skip starting position
-                    if cell == friend1:
-                        new_collected.add(friend1)
-                    elif cell == friend2:
-                        new_collected.add(friend2)
+                    if cell == amber_crystal:
+                        new_collected.add(amber_crystal)
+                    elif cell == violet_crystal:
+                        new_collected.add(violet_crystal)
                     elif cell == goal:
-                        # Only allow collecting goal if both friends are collected
-                        if friend1 in new_collected and friend2 in new_collected:
+                        # Only allow collecting goal if both crystals are collected
+                        if amber_crystal in new_collected and violet_crystal in new_collected:
                             new_collected.add(goal)
                 
                 queue.append((new_pos, frozenset(new_collected), moves + 1))
@@ -111,11 +111,11 @@ class PuzzleGenerator:
             game.move_count = 0
             game.game_won = False
             PuzzleGenerator._add_island_walls(game)
-            start, goal, friend1, friend2 = PuzzleGenerator._random_positions(game)
+            start, goal, amber_crystal, violet_crystal = PuzzleGenerator._random_positions(game)
             game.start_pos = start
             game.goal_pos = goal
-            game.friend1_pos = friend1
-            game.friend2_pos = friend2
+            game.amber_crystal_pos = amber_crystal
+            game.violet_crystal_pos = violet_crystal
             game.robot_pos = start
             game.update_grid()
             moves = PuzzleGenerator._compute_solution_length(game, max_moves=max_moves+5)
@@ -171,8 +171,8 @@ class PuzzleGenerator:
             {
                 'start': Position(1, 1),
                 'goal': Position(3, 3), 
-                'friend1': Position(0, 3),
-                'friend2': Position(3, 0),
+                'amber_crystal': Position(0, 3),
+                'violet_crystal': Position(3, 0),
                 'walls': [
                     # Internal barriers
                     EdgeWall(Position(1, 2), Position(2, 2)),  # Vertical wall
@@ -189,8 +189,8 @@ class PuzzleGenerator:
             {
                 'start': Position(0, 2),
                 'goal': Position(4, 2),
-                'friend1': Position(2, 0),
-                'friend2': Position(2, 4),
+                'amber_crystal': Position(2, 0),
+                'violet_crystal': Position(2, 4),
                 'walls': [
                     # Central cross pattern
                     EdgeWall(Position(1, 1), Position(2, 1)),  # Vertical wall
@@ -214,8 +214,8 @@ class PuzzleGenerator:
         
         game.start_pos = layout['start']
         game.goal_pos = layout['goal']
-        game.friend1_pos = layout['friend1']
-        game.friend2_pos = layout['friend2']
+        game.amber_crystal_pos = layout['amber_crystal']
+        game.violet_crystal_pos = layout['violet_crystal']
         game.robot_pos = game.start_pos
         
         for wall in layout['walls']:

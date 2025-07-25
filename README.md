@@ -109,13 +109,13 @@ def _compute_solution_length(game, max_moves=30):
             
             # Check collection during slide
             for cell in path[1:]:  # Skip starting position
-                if cell == friend1:
-                    new_collected.add(friend1)
-                elif cell == friend2:
-                    new_collected.add(friend2)
+                if cell == amber_crystal:
+                    new_collected.add(amber_crystal)
+                elif cell == violet_crystal:
+                    new_collected.add(violet_crystal)
                 elif cell == goal:
-                    # Only allow collecting goal if both friends are collected
-                    if friend1 in new_collected and friend2 in new_collected:
+                    # Only allow collecting goal if both crystals are collected
+                    if amber_crystal in new_collected and violet_crystal in new_collected:
                         new_collected.add(goal)
             
             queue.append((new_pos, frozenset(new_collected), moves + 1))
